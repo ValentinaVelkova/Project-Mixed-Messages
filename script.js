@@ -42,15 +42,34 @@ for (let message in fortunes) {
 
 const fortunesMessage = (arr) => {
     let finalMessage = [];
-    finalMessage.push(`\u{1F60D} As predicted your best personality trait is: ${arr[0]}`);
-    finalMessage.push(`\u{1F613} That is great but you shoud work more on your: ${arr[1]}`);
-    finalMessage.push(`\u{1F60E} Don't worry though, because you will succeed in: ${arr[2]}`);
-    finalMessage.push(`\u{1F607} Your quote of the day is: ${arr[3]}`);
+    finalMessage.push(`As predicted your best personality trait is <b> ${arr[0]} </b> \u{1F60D}`);
+    finalMessage.push(`That is great but you shoud work more on your <b> ${arr[1]} </b> \u{1F613} `);
+    finalMessage.push(`Don't worry though, because you will succeed in <b> ${arr[2]} </b> \u{1F60E}`);
+    finalMessage.push(`Your quote of the day is <b> ${arr[3]} </b> \u{1F607}`);
 
     const messageString = finalMessage.join('\n');
-    console.log(messageString);
+    return messageString;
 }
 
-fortunesMessage(messages);
+
+// Creating the functionality for the Find out button
+
+const text = document.getElementById("text");
+const list = document.getElementById("list");
+const button = document.querySelector("button");
+
+
+const hideElements = () => {
+    text.style.display = "none";
+    list.style.display = "none";
+}
+
+const showMessages = document.getElementById("messages");
+
+const getMessages = () => {
+    return showMessages.innerHTML = fortunesMessage(messages);
+}
+
+
 
 

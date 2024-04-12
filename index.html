@@ -9,17 +9,18 @@
 <body>
     <h1>Mixed Messages</h1>
     <div class="info">
-        <p>If you click the button you will find out:</p>
-        <ul>
+        <p id="text">If you click the button you will find out:</p>
+        <ul id="list">
             <li>Your best personality trait</li>
             <li>In what area you should work more on</li>
-            <li>Where you will succeed</li>            <li>Your quote of the day</li>
+            <li>Where you will succeed</li>
+            <li>Your quote of the day</li>
         </ul>
+        <p id="messages"></p>
     </div>
     <div class="button">
-        <button>Find out now!</button>
+        <button onclick="hideElements(); getMessages()">Find out now!</button>
     </div>
-    
-    
+    <script src="script.js"></script>
 </body>
 </html>
